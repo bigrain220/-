@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网站统计</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/echarts-en.min.js"></script>
+    <script src="../js/china.js"></script>
+    <script src="../js/index.js"></script>
+</head>
+
+<body>
+    <div class="body">
+        <div class="aside">
+            <div class="nav-wrapper">
+                <div class="title">
+                    <span class="iconfont icondaohang"></span>
+                    <span>网站导航</span>
+                </div>
+                <ul class="main-menu hm-scroll">
+                    <li class="clearfix nav1">
+                        <a href="../index/index" class="cur">
+                            <span class="iconfont icongaikuang"></span>
+                            <span class="menu-label">网站概况</span>
+                        </a>
+                    </li>
+                    <li class="clearfix nav1">
+                        <a href="#">
+                            <span class="iconfont icongaikuang1"></span>
+                            <span class="menu-label">流量分析</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="../trend/time">
+                                    <span class="menu-label">趋势分析</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="clearfix nav1">
+                        <a href="#">
+                            <span class="iconfont iconbaogaoxinlaiyuanfenxi"></span>
+                            <span class="menu-label">来源分析</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="../source/all">
+                                    <span class="menu-label">全部来源</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../source/engine">
+                                    <span class="menu-label">搜索引擎</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../source/searchwords">
+                                    <span class="menu-label">搜索词</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../source/link">
+                                    <span class="menu-label">外部链接</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="clearfix nav1">
+                        <a href="#">
+
+                            <span class="iconfont  iconfangwenfenxi"></span>
+                            <span class="menu-label">访问分析</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="../visit/toppage">
+                                    <span class="menu-label">受访页面</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../visit/topdomain">
+                                    <span class="menu-label">受访域名</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="clearfix nav1">
+                        <a href="#">
+                            <span class="iconfont  iconbaogao-fangkefenxi"></span>
+                            <span class="menu-label">访客分析</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="../visitor/district">
+                                    <span class="menu-label">地域分布</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../visitor/client">
+                                    <span class="menu-label">系统环境</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="simple-nav-wrapper hide">
+                <div class="title">
+                    <span class="iconfont icondaohang"></span>
+                </div>
+                <ul class="simple-nav">
+                    <li class="clearfix nav1 source-analysis-selected">
+                        <a href="javascript:void(0)" class="super-menu-item">
+                            <span class="iconfont icongaikuang"></span>
+                        </a>
+                        <ul class="item-content hide">
+                            <li class="nav-title single clearfix">
+                                <a href="../index/index">网站概况</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="clearfix nav1">
+                        <a href="javascript:void(0)" class="super-menu-item">
+                            <span class="iconfont icongaikuang1"></span>
+                        </a>
+                        <ul class="item-content hide">
+                            <li class="nav-title">流量分析</li>
+                            <li>
+                                <a href="../trend/time">趋势分析</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="clearfix nav1">
+                        <a href="javascript:void(0)" class="super-menu-item">
+                            <span class="iconfont iconbaogaoxinlaiyuanfenxi"></span>
+                        </a>
+                        <ul class="item-content hide">
+                            <li class="nav-title">来源分析</li>
+                            <li>
+                                <a href="../source/all">全部来源</a>
+                            </li>
+                            <li>
+                                <a href="../source/engine"> 搜索引擎</a>
+                            </li>
+                            <li>
+                                <a href="../source/searchwords">搜索词</a>
+                            </li>
+                            <li>
+                                <a href="../source/link">外部链接</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="clearfix nav1">
+                        <a href="javascript:void(0)" class="super-menu-item">
+                            <span class="iconfont  iconfangwenfenxi"></span>
+                        </a>
+                        <ul class="item-content hide">
+                            <li class="nav-title">访问分析</li>
+                            <li>
+                                <a href="../visit/toppage">受访页面</a>
+                            </li>
+                            <li>
+                                <a href="../visit/topdomain">受访域名</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="clearfix nav1">
+                        <a href="javascript:void(0)" class="super-menu-item">
+                            <span class="iconfont  iconbaogao-fangkefenxi"></span>
+                        </a>
+                        <ul class="item-content hide">
+                            <li class="nav-title">访客分析</li>
+                            <li>
+                                <a href="../visitor/district">地域分布</a>
+                            </li>
+                            <li>
+                                <a href="../visitor/client">系统环境</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div id="main">
+            <div class="content-header-wrapper">
+                <div class="content-header">
+                    <div class="header-container clearfix">
+                        <span class="header-text l">网站概况</span>
+                        <div class="old-link r">
+                            <span class="tips">新版统计为2019年7月18号之后的数据，如要看之前的数据请看</span>
+                            <a href="http://unionv4.g3user.com/visit/index/access">旧版统计</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="table-list">
+                    <div class="table-list-title">今日流量</div>
+                    <table class="table  main-table">
+                        <tr>
+                            <th></th>
+                            <th class="number" data="pv_count" id="pv_count">
+                                <div class="td-content">浏览量(PV)</div>
+                            </th>
+                            <th class="number" data="visitor_count" id="visitor_count">
+                                <div class="td-content">访客数(UV)</div>
+                            </th>
+                            <th class="number" data="vv_count" id="vv_count">
+                                <div class="td-content">访问数(VV)</div>
+                            </th>
+                            <th class="number" data="ip_count" id="ip_count">
+                                <div class="td-content">IP数</div>
+                            </th>
+                            <th class="last"></th>
+                        </tr>
+                        <tr class="today">
+                            <td style="font-weight: normal;font-size: 12px;" class="index-title">今日</td>
+                            <td class="number"></td>
+                            <td class="number"></td>
+                            <td class="number"></td>
+                            <td class="number"></td>
+                            <td class="last"></td>
+                        </tr>
+                        <tr class="yesterday">
+                            <td class="index-title">昨日</td>
+                            <td class="number"></td>
+                            <td class="number"></td>
+                            <td class="number"></td>
+                            <td class="number"></td>
+                            <td class="last"></td>
+                        </tr>
+                        <tr class="about-today">
+                            <td class="index-title">总计</td>
+                            <td class="number"></td>
+                            <td class="number"></td>
+                            <td class="number"></td>
+                            <td class="number"></td>
+                            <td class="last"></td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="box-content">
+                <div class="DateSelectBar clearfix">
+                    <span class="trackable" data-date="0">今天</span>
+                    <span class="trackable" data-date="-1">昨天</span>
+                    <span class="trackable" data-date="-6">最近7天</span>
+                    <span class="trackable" data-date="-29">最近30天</span>
+                </div>
+                <div class="index-site">
+                    <div class="first-row clearfix">
+                        <div class="l table-item">
+                            <div class="title clearfix">
+                                <div class="l">趋势图</div>
+                                <a href="../trend/time" class="r"><span class="more"></span></a>
+                            </div>
+                            <ul class="group clearfix">
+                                <li class="cur" data-type="pv">浏览量(PV)</li>
+                                <li data-type="uv">访客数(UV)</li>
+                                <li data-type="vv">访问数(VV)</li>
+                                <li data-type="ip">IP数</li>
+                            </ul>
+                            <div id="line">
+
+                            </div>
+                            <div class="loading time-loading"><img src="/img/loading.gif"
+                                    alt="tp" /><span>数据加载中...</span></div>
+                        </div>
+                        <div class="r table-item">
+                            <div class="title clearfix">
+                                <div class="l">Top10搜索词</div>
+                                <a href="../source/searchwords" class="r"><span class="more"></span></a>
+                            </div>
+                            <div class="table-box">
+                                <table class="table table-condensed searchwords-table">
+                                    <thead>
+                                        <tr>
+                                            <td>搜索词</td>
+                                            <td width="20%">浏览量(PV)</td>
+                                            <td width="20%">占比</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- <tr>
+                                            <td><span class="ellipsis" title="南京华谷品牌管理">南京华谷品牌管理</span>
+                                            </td>
+                                            <td>3</td>
+                                        </tr>-->
+                                    </tbody>
+                                </table>
+                                <div class="loading searchwords-loading"><img src="/img/loading.gif"
+                                        alt="tp" /><span>数据加载中...</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="second-row clearfix">
+                        <div class="l table-item">
+                            <div class="title clearfix">
+                                <div class="l">Top10来源网站</div>
+                                <a href="../source/all" class="r"><span class="more"></span></a>
+                            </div>
+                            <div class="table-box">
+                                <table class="table table-condensed source-all-table">
+                                    <thead>
+                                        <tr>
+                                            <td>来源网站</td>
+                                            <td>浏览量(PV)</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      
+                                    </tbody>
+                                </table>
+                                <div class="loading source-all-loading"><img src="/img/loading.gif" alt="tp"/><span>数据加载中...</span></div>
+                            </div>
+                        </div>
+                       
+                    </div> -->
+                    <div class="third-row clearfix">
+                        <div class="l table-item">
+                            <div class="title clearfix">
+                                <div class="l">Top10受访页面</div>
+                                <a href="../visit/toppage" class="r"><span class="more"></span></a>
+                            </div>
+                            <div class="table-box">
+                                <table class="table table-condensed toppage-table">
+                                    <thead>
+                                        <tr>
+                                            <td>受访页面</td>
+                                            <td width="20%">浏览量(PV)</td>
+                                            <td width="20%">占比</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- <tr>
+                                            <td><a target="_blank" class="ellipsis" href="http://www.51g3.com.cn"
+                                                    title="http://www.51g3.com.c">http://www.51g3.com.cn</a>
+                                            </td>
+                                            <td>3</td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                                <div class="loading toppage-loading"><img src="/img/loading.gif"
+                                        alt="tp" /><span>数据加载中...</span></div>
+                            </div>
+                        </div>
+                        <div class="r table-item">
+                            <div class="title clearfix">
+                                <div class="l">地域分布</div>
+                                <a href="../visitor/district" class="r"><span class="more"></span></a>
+                            </div>
+                            <div id='map' style="height: 320px;width: 450px;margin: 0 auto;">
+
+                            </div>
+                            <div class="map-legend">浏览量<em>&nbsp;</em></div>
+                            <div class="loading district-loading"><img src="/img/loading.gif"
+                                    alt="tp" /><span>数据加载中...</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="../js/common.js"></script>
+
+
+</body>
+
+</html>

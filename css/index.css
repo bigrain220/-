@@ -1,0 +1,229 @@
+
+
+#main .main-content {
+    margin: 20px;
+    background: #fff;
+}
+
+ #main .table-list {
+    padding: 6px 1px 30px 0;
+    border: 1px solid #dedede;
+    border-bottom: 0;
+}
+
+#main .table-list .table-list-title {
+    padding: 14px 15px 0;
+    font-size: 14px;
+    color: #323437;
+    font-weight: 700;
+}
+
+#main .table-list .table {
+    margin-top: 27px;
+
+}
+
+#main .main-table th {
+    font-weight: normal;
+}
+#main .main-table tr th:nth-child(2),#main .main-table tr th:nth-child(3){
+  width: 16%;
+}
+#main .main-table tr:nth-child(2) td {
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+#main .main-table .last {
+    width: 20%;
+    border-left: 1px solid #eee!important;
+}
+
+#main .table-list .main-table * {
+    border: 0;
+}
+
+#main .table-list .main-table .index-title {
+    padding-left: 15px;
+}
+
+#main .main-table td.number {
+    border-left: 1px solid #eee;
+}
+
+#main .main-table td.number,
+#main .main-table th.number {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.box-content {
+    margin: 20px;
+}
+
+.box-content .DateSelectBar {
+    width: 100%;
+    height: 32px;
+    background: #fff;
+    margin-bottom: 18px;
+}
+
+.box-content .DateSelectBar span {
+    float: left;
+    line-height: 32px;
+    text-align: center;
+    padding: 0 19px 0 20px;
+    border-right: 1px solid #dedede;
+    cursor: pointer;
+}
+
+.box-content .DateSelectBar span:nth-of-type(1),
+.box-content .index-site .first-row .group>li:nth-of-type(1) {
+    border-radius: 2px 0 0 2px;
+}
+
+.box-content .DateSelectBar span:nth-last-of-type(1),
+.box-content .index-site .first-row .group>li:nth-last-of-type(1) {
+    border-radius: 0 2px 2px 0;
+}
+
+.box-content .DateSelectBar span:not(.cur):hover {
+    background: #f2f3f4;
+}
+
+.box-content .DateSelectBar .cur {
+    background: #4da7fd;
+    color: #fff;
+}
+
+.box-content .index-site .first-row .cur {
+    background: #4da7fd;
+    border: 1px solid #4aa6fc;
+    color: #fff;
+}
+
+.box-content .index-site .first-row .group {
+    height: 26px;
+    margin-top: 10px;
+}
+
+.box-content .index-site .first-row .group>li {
+    float: left;
+    line-height: 26px;
+    text-align: center;
+    padding: 0 9px;
+    cursor: pointer;
+    border: 1px solid #e1e3e4;
+    margin-left: -1px;
+}
+.box-content .index-site .first-row .group>li:not(.cur):hover{
+    background: #f2f3f4;
+}
+
+.table-item {
+    width: 49%;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 20px;
+    margin-top: 1px;
+    background-color: #fff;
+    height: 392px;
+    border: 1px solid #e1e2e2;
+    border-radius: 2px;
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.table-item .title .l {
+    color: #323437;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.table-item .more {
+    display: inline-block;
+    text-align: center;
+    width: 18px;
+    height: 18px;
+    background: url('/img/sprites.png') no-repeat;
+}
+
+.table-item .more:hover {
+    background-position: 0px -18px;
+}
+
+.table-item #line,
+.table-item #map {
+    height: 315px;
+    width: 100%;
+}
+
+.table-item .table-box {
+    margin-top: 10px;
+}
+
+.table-item .table-box td {
+    padding: 6px;
+    border-color: transparent;
+}
+
+.table-item .table-box thead td {
+    color: #787a7d;
+}
+
+.table-item .table-box a,
+a:hover {
+    color: #1276e5;
+}
+.table-item .table-box tr td:nth-child(1){
+    max-width: 400px;
+ }
+.table-item .table-box tr td:nth-child(2){
+   text-align: right;
+}
+.table-item .table-box tr td:nth-child(3){
+    width: 90px;
+    text-align: left;
+}
+@media screen and (max-width: 1300px){
+    .table-item .table-box tr td:nth-child(1) {
+        max-width: 360px;
+    }
+}
+.table-item .loading{
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top:82px;
+    left: 0;
+    z-index: 66;
+    background: #fff;
+}
+.table-item .loading img{
+    position: relative;
+    top:30%;
+    left:40%;
+}
+.table-item .loading span{
+    position: relative;
+    top:30%;
+    left:42%;
+}
+.map-legend{
+    position: absolute;
+    bottom: 45px;
+    height: 20px;
+    line-height: 20px;
+    left: 20px;
+    color: #747d85;
+    margin-left: 10px;
+}
+.map-legend em{
+    display: inline-block;
+    margin-left: 3px;
+    width: 150px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: url("../img/map-legend.png");
+}

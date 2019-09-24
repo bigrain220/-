@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网站统计</title>
+    <link rel="stylesheet" href="/css/paging.css">
+    <link rel="stylesheet" href="/css/source.css">
+    <link rel="stylesheet" href="/css/iconfont.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/echarts-en.min.js"></script>
+    <script src="/js/all.js"></script>
+    <script src="/js/paging.js"></script>
+</head>
+
+<body>
+    <div class="aside">
+        <div class="nav-wrapper">
+            <div class="title">
+                <span class="iconfont icondaohang"></span>
+                <span>网站导航</span>
+            </div>
+            <ul class="main-menu">
+                <li class="clearfix nav1">
+                    <a href="../index/index">
+                        <span class="iconfont icongaikuang"></span>
+                        <span class="menu-label">网站概况</span>
+                    </a>
+                </li>
+                <li class="clearfix nav1">
+                    <a href="#">
+                        <span class="iconfont icongaikuang1"></span>
+                        <span class="menu-label">流量分析</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="../trend/time">
+                                <span class="menu-label">趋势分析</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="clearfix nav1">
+                    <a href="#">
+                        <span class="iconfont iconbaogaoxinlaiyuanfenxi"></span>
+                        <span class="menu-label">来源分析</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="../source/all">
+                                <span class="menu-label">全部来源</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../source/engine" class="cur">
+                                <span class="menu-label">搜索引擎</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../source/searchwords">
+                                <span class="menu-label">搜索词</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../source/link">
+                                <span class="menu-label">外部链接</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="clearfix nav1">
+                    <a href="#">
+
+                        <span class="iconfont  iconfangwenfenxi"></span>
+                        <span class="menu-label">访问分析</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="../visit/toppage">
+                                <span class="menu-label">受访页面</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../visit/topdomain">
+                                <span class="menu-label">受访域名</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="clearfix nav1">
+                    <a href="#">
+                        <span class="iconfont  iconbaogao-fangkefenxi"></span>
+                        <span class="menu-label">访客分析</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="../visitor/district">
+                                <span class="menu-label">地域分布</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../visitor/client">
+                                <span class="menu-label">系统环境</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <div class="simple-nav-wrapper hide">
+                <div class="title">
+                    <span class="iconfont icondaohang"></span>
+                </div>
+                <ul class="simple-nav">
+                    <li class="clearfix nav1">
+                        <a href="javascript:void(0)" class="super-menu-item">
+                            <span class="iconfont icongaikuang"></span>
+                        </a>
+                        <ul class="item-content hide">
+                            <li class="nav-title single clearfix">
+                                <a href="../index/index">网站概况</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="clearfix nav1">
+                        <a href="javascript:void(0)" class="super-menu-item">
+                            <span class="iconfont icongaikuang1"></span>
+                        </a>
+                        <ul class="item-content hide">
+                            <li class="nav-title">流量分析</li>
+                            <li>
+                                <a href="../trend/time">趋势分析</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="clearfix nav1 source-analysis-selected">
+                        <a href="javascript:void(0)" class="super-menu-item">
+                            <span class="iconfont iconbaogaoxinlaiyuanfenxi"></span>
+                        </a>
+                        <ul class="item-content hide">
+                            <li class="nav-title">来源分析</li>
+                            <li>
+                                <a href="../source/all">全部来源</a>
+                            </li>
+                            <li>
+                                <a href="../source/engine" class="selected"> 搜索引擎</a>
+                            </li>
+                            <li>
+                                <a href="../source/searchwords">搜索词</a>
+                            </li>
+                            <li>
+                                <a href="../source/link">外部链接</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="clearfix nav1">
+                        <a href="javascript:void(0)" class="super-menu-item">
+                            <span class="iconfont  iconfangwenfenxi"></span>
+                        </a>
+                        <ul class="item-content hide">
+                            <li class="nav-title">访问分析</li>
+                            <li>
+                                <a href="../visit/toppage">受访页面</a>
+                            </li>
+                            <li>
+                                <a href="../visit/topdomain">受访域名</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="clearfix nav1">
+                        <a href="javascript:void(0)" class="super-menu-item">
+                            <span class="iconfont  iconbaogao-fangkefenxi"></span>
+                        </a>
+                        <ul class="item-content hide">
+                            <li class="nav-title">访客分析</li>
+                            <li>
+                                <a href="../visitor/district">地域分布</a>
+                            </li>
+                            <li>
+                                <a href="../visitor/client">系统环境</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+    </div>
+    <div id="main">
+        <div class="content-header-wrapper">
+            <div class="content-header">
+                <div class="header-container clearfix">
+                    <span class="header-text">搜索引擎</span>
+                    <span class="header-data"></span>
+                </div>
+                <div id="filters">
+                    <div class="control-bar-wrapper clearfix">
+                        <div class="control-bar l">
+                            <span class="l time">时间：</span>
+                            <div class="l date-select-bar clearfix" id="date-select-bar">
+                                <span data-date='0' class="trackable">今天</span>
+                                <span class="seprator"></span>
+                                <span data-date='-1' class="trackable">昨天</span>
+                                <span class="seprator"></span>
+                                <span data-date='-6' class="trackable">最近7天</span>
+                                <span class="seprator"></span>
+                                <span data-date='-29' class="trackable">最近30天</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div id="summary" class="section">
+                <table class="table summary">
+                    <tbody>
+                        <tr>
+                            <td><span class="text">浏览量(PV)<a href="javascript:void(0);" data="pv_count"
+                                        class="help iconbangzhu2 iconfont" data-toggle="tooltip"
+                                        title="<div>即通常说的Page View(PV)，用户每打开一个网站页面就被记录1次。用户多次打开同一页面，浏览量值累计。</div>"></a></span>
+                                <div class="value ellipsis" title=""></div>
+                            </td>
+                            <td><span class="text">访客数(UV)<a href="javascript:void(0);" data="visitor_count"
+                                        data-toggle="tooltip"
+                                        title="<div>一天之内您网站的独立访客数(以Cookie为依据)，一天内同一访客多次访问您网站只计算1个访客。</div>"
+                                        class="help iconbangzhu2 iconfont"></a></span>
+                                <div class="value ellipsis" title=""></div>
+                            </td>
+                            <td><span class="text">访问数(VV)<a href="javascript:void(0);" data-toggle="tooltip"
+                                        title="<div>VV即VisitView，访客的访问次数，用以记录所有访客1天内访问了多少次您的网站。</div>" data="vv_count"
+                                        class="help iconbangzhu2 iconfont"></a></span>
+                                <div class="value ellipsis" title=""></div>
+                            </td>
+                            <td class="last"><span class="text">IP数<a href="javascript:void(0);" data="ip_count"
+                                        data-toggle="tooltip" title="<div>一天之内您网站的独立访问ip数。</div>"
+                                        class="help iconbangzhu2 iconfont"></a></span>
+                                <div class="value ellipsis" title=""></div>
+                            </td>
+                            <td class="last-space">
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="flash-text-container">
+                <span class="flash-text">趋势图</span>
+            </div>
+            <div class="table-echarts">
+                <ul class="group clearfix">
+                    <li data-type='pv' class="cur">浏览量(PV)</li>
+                    <li data-type='uv'>访客数(UV)</li>
+                    <li data-type='vv'>访问数(VV)</li>
+                    <li data-type='ip'>IP数</li>
+                </ul>
+                <div class="echarts-box clearfix">
+                    <div id="all_circle"></div>
+                    <div id="all_line"></div>
+                    <div class="circle-loading loading"><img src="/img/loading.gif" alt="tp" /><span>&nbsp&nbsp&nbsp数据加载中...</span>
+                    </div>
+                    <div class="line-loading loading"><img src="/img/loading.gif" alt="tp" /><span>&nbsp&nbsp&nbsp数据加载中...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fold">
+                <span class="toggleable  iconfont iconshang">
+                </span>
+            </div>
+            <div id="table-show">
+                <table class="table table-bordered">
+                    <thead style="background: #f4f4f4;">
+                        <tr class="group-title">
+                            <td class="table-index simple_date_title" colspan="1" rowspan="2">
+                                <div class="td-content">搜索引擎</div>
+                            </td>
+                            <td class="number-col first" colspan="1" rowspan="2">
+                                <div class="td-content">&nbsp;</div>
+                            </td>
+                            <td class="group-name" colspan="4" rowspan="">
+                                <div class="td-content">网站基础指标</div>
+                            </td>
+                        </tr>
+                        <tr class="group-item">
+                            <td class="number desc" data-type="pv">
+                                <div class="td-content">浏览量(PV)</div>
+                            </td>
+                            <td class="number" data-type="uv">
+                                <div class="td-content">访客数(UV)</div>
+                            </td>
+                            <td class="number" data-type="vv">
+                                <div class="td-content">访问数(VV)</div>
+                            </td>
+                            <td class="number" data-type="ip">
+                                <div class="td-content">IP数</div>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr class="line">
+                            <td class="number-col">
+                                <div class="td-content" title="1">1</div>
+                            </td>
+                            <td class="table-index  first">
+                                <div class="td-content">360搜索</div>
+                            </td>
+                            <td class="number">
+                                <div class="td-content">246</div>
+                            </td>
+                            <td class="number">
+                                <div class="td-content">114</div>
+                            </td>
+                            <td class="number">
+                                <div class="td-content">114</div>
+                            </td>
+                            <td class="number">
+                                <div class="td-content">116</div>
+                            </td>
+                        </tr> -->
+
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td class="number-col" colspan="">
+                                <div class="td-content" title="&nbsp;">&nbsp;</div>
+                            </td>
+                            <td class="summary simple_date_title first" colspan="1">
+                                <div class="td-content" title="">当前汇总</div>
+                            </td>
+                            <!-- <td class="number">
+                                        <div class="td-content">469</div>
+                                    </td>
+                                    <td class="number">
+                                        <div class="td-content">179</div>
+                                    </td>
+                                    <td class="number">
+                                        <div class="td-content">114</div>
+                                    </td>
+                                    <td class="number">
+                                        <div class="td-content">175</div>
+                                    </td> -->
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div id="pageToolbar"></div>
+            <div class="blank"></div>
+        </div>
+    </div>
+    <script src="/js/common.js"></script>
+    <script>
+        $(function () {
+            $("a.help").tooltip({
+                html: true,
+                trigger: 'hover',
+                placement: 'bottom',
+                viewport: {
+                    "selector": "#summary",
+                    "padding": 0
+                }
+            });
+        });
+    </script>
+    <!-- <script>
+        var myChart = echarts.init(document.getElementById('all_circle'));
+        myChart.showLoading();
+        var option = {
+            tooltip: {
+                trigger: 'item',
+                backgroundColor: 'rgba(255,255,255,0.9)',
+                textStyle: {
+                    color: '#666',
+                    fontSize: '14px',
+                },
+                confine: true,
+                extraCssText: 'width:220px;height:110px;padding:0;box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);',
+                formatter: function (params) {
+                    var val = params.value;
+                    val > 0 ? val = val : val = '--'
+                    var res =
+                        '<div><div style="height:35px;line-height:35px;padding:0 8px;background:rgba(237,233,233,0.4)">' +
+                        '<span style="margin-right:5px;display:inline-block;width:10px;height:10px;border-radius:5px;background-color:' +
+                        params.color + ';"></span>' + params.name +
+                        '</div><div style="height:30px;line-height:30px;overflow:hidden;padding:0 8px;">' +
+                        '<span style="float:left">' + params.seriesName + '</span>' +
+                        '<span style="float:right">' + val + '</span></div>' +
+                        '<div style="height:30px;line-height:30px;overflow:hidden;padding:0 8px;"><span style="float:left">' +
+                        '占比' + '</span>' +
+                        '<span style="float:right">' + params.percent + '%' + '</span></div>'
+                    '</div>'
+                    return res;
+                },
+            },
+            textStyle: {
+                color: 'rgb(50, 52, 55)',
+            },
+            color: ['rgb(245, 110, 106)', 'rgb(110, 199, 30)', 'rgb(79, 168, 249)', ],
+            series: [{
+                name: '浏览量(pv)',
+                type: 'pie',
+                radius: ['55%', '70%'],
+                label: {
+                    formatter: '{d}%'
+                },
+                labelLine: {
+                    length: 10,
+                    length2: 6,
+                },
+                data: []
+            }, ]
+        };
+        myChart.setOption(option);
+        myChart.setOption({
+            series: {
+                data: [{
+                        value: 8,
+                        name: '360搜索'
+                    },
+                    {
+                        value: 5,
+                        name: '神马搜索'
+                    }, {
+                        value: 4,
+                        name: '百度'
+                    },
+
+
+                ]
+            }
+        })
+        myChart.hideLoading();
+    </script> -->
+    <!-- <script>
+        var myChart1 = echarts.init(document.getElementById('all_line'));
+        var option = {
+            tooltip: {
+                trigger: 'axis',
+                backgroundColor: 'rgba(255,255,255,0.8)',
+                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow', // 默认为直线，可选为：'line' | 'shadow'
+                    shadowStyle: {
+                        color: 'rgba(150,150,150,0.2)'
+                    }
+                },
+                textStyle: {
+                    color: '#666',
+                    fontSize: '14px',
+                },
+                extraCssText: 'width:180px;height:160px;padding:0;box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);"',
+                formatter: function (params) {
+                    var htmlStr = "";
+                    for (var i = 0; i < params.length; i++) {
+                        var tem = params[i].name;
+                        var val = params[i].value;
+                        tem > 9 ? tem = tem : tem = '0' + tem;
+                        val > 0 ? val = val : val = '--'
+                        htmlStr +=
+                            '<div style="height:26px;line-height:26px;overflow:hidden;padding:6px 8px;">' +
+                            '<span style="float:left">' +
+                            '<span style="margin-right:5px;display:inline-block;width:10px;height:10px;border-radius:5px;background-color:' +
+                            params[i].color + ';"></span>' + params[i].seriesName + '</span>' +
+                            '<span style="float:right">' + val + '</span>' + '</div>'
+                    }
+                    var res =
+                        '<div><div style="height:40px;line-height:40px;padding:0 8px;background:rgba(237,233,233,0.4)">' +
+                        tem + ':00' + '-' + tem + ':59' + htmlStr + '</div></div>'
+
+
+                    return res;
+                },
+            },
+            textStyle: {
+                color: 'rgb(120, 122, 125)',
+            },
+            color: ['rgb(79, 168, 249)', 'rgb(110, 199, 30)', 'rgb(245, 110, 106)', '#cde5ff'],
+            grid: {
+                top: 30, //越大越靠下，默认60
+            },
+            legend: {
+                left: 0,
+                bottom: 2,
+                itemGap: 45,
+                itemWidth: 9,
+                itemHeight: 10,
+                textStyle: {
+                    padding: [0, 0, 0, 12]
+                },
+                data: ['360搜索', '神马搜索', '百度', '搜索引擎总计']
+            },
+            xAxis: [{
+                type: 'category',
+                // boundaryGap: false,//坐标轴两边留白策略
+                axisTick: {
+                    alignWithLabel: true
+                },
+                axisLabel: {
+                    interval: 2
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: "#ddd"
+                    }
+                },
+                data: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15',
+                    '16', '17', '18', '19', '20', '21', '22', '23'
+                ]
+            }],
+            yAxis: [{
+                type: 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: "transparent"
+                    }
+                },
+                splitLine: {
+                    lineStyle: {
+                        color: '#eee',
+                    }
+                }
+            }],
+            series: [{
+                    type: 'line',
+                    symbol: 'circle',
+                    symbolSize: '5',
+                    data: []
+                },
+                {
+                    type: 'line',
+                    symbol: 'circle',
+                    symbolSize: '5',
+                    data: []
+                },
+                {
+                    type: 'line',
+                    symbol: 'circle',
+                    symbolSize: '5',
+                    data: []
+
+                },
+                {
+                    type: 'bar',
+                    barWidth: '60%',
+                    data: []
+                }
+            ]
+        };
+        myChart1.setOption(option);
+        myChart1.setOption({
+            series: [{
+                name: '360搜索',
+                data: [2, 0, 0, 0, 0, 0, 0, 0, 6, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            }, {
+                name: '神马搜索',
+                data: [0, 0, 0, 0, 0, 0, 1, 1, 1, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            }, {
+                name: '百度',
+                data: [0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            }, {
+                name: '搜索引擎总计',
+                data: [2, 0, 0, 0, 0, 5, 1, 1, 7, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            }, ]
+        })
+    </script> -->
+</body>
+
+</html>

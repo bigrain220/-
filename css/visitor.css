@@ -1,0 +1,106 @@
+.main-menu li.nav1:nth-of-type(5)>ul {
+    display: block;
+}
+
+.main-menu li.nav1:nth-of-type(5)>a {
+    color: #1276e5;
+}
+
+
+.table-echarts #line {
+    height: 320px;
+    width: 100%;
+}
+
+
+ .table-echarts .echarts-box {
+    position: relative;
+    height: 300px;
+    width: 1030px;
+    margin: 0 auto;
+}
+.table-echarts #china-map{
+    height: 302px;
+    width: 500px;
+    float: left;
+}
+.table-echarts #china-map-table{
+    height: 302px;
+    width: 480px;
+    border-radius: 3px;
+    margin-left: 4%;
+    float: left;
+}
+.map-legend{
+    position: absolute;
+    bottom: 15px;
+    height: 20px;
+    line-height: 20px;
+    color: #747d85;
+    margin-left: 10px;
+    z-index: 666;
+}
+.map-legend em{
+    display: inline-block;
+    margin-left: 3px;
+    width: 150px;
+    height: 20px;
+    background-image: url("../img/map-legend.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+@media screen and (max-width: 1279px){
+body {
+    min-width: 1280px;
+    overflow-x: auto;
+}
+}
+.table-echarts #china-map-table .table-content{
+    height: 270px;
+overflow-y: scroll;
+}
+.table-echarts #china-map-table .table{
+    margin-bottom: 0;
+}
+.table-echarts #china-map-table .table *{
+    border:0;
+}
+.table-echarts #china-map-table .table  tr td{
+border-bottom: 1px solid #dedede;
+padding: 6px;
+}
+.table-echarts #china-map-table .table thead{
+    background-color: #f4f4f4;
+}
+
+/* expand */
+#table-show .table-expand tbody td.number-col{
+    text-align: right;
+    padding-right: 10px;
+}
+#table-show .table-expand tbody td.number-col::after,#table-show .table-expand tbody td.number-col::before{content:".";line-height:0;height:0;display:block;visibility:hidden;clear:both;}
+#table-show .table-expand tbody td.number-col .expand{
+    width: 50%;
+    height: 18px;
+    float: left;
+    background: url("../img/sprites.png");
+    background-repeat: no-repeat;
+    background-position: 12px -180px;
+    cursor: pointer;
+}
+#table-show .table-expand tbody td.number-col .expand.opened{
+    background-position: 12px -200px;  
+}
+#table-show .table-expand tbody td.number-col .td-content{
+    width: 50%;
+    float: right;
+}
+.sub-line *{border-left:0!important;border-right:0!important;}
+.sub-line td{background: rgb(249, 249, 249);border-bottom: 1px solid #f0f0f0!important;border-top: 0!important;}
+.sub-line-first td.table-index{
+    font-weight: 700;
+}
+.sub-line-last td{border-bottom: 1px solid #dedede!important;}
+.table-expand .sub-line:hover  td{ background: #e2e4f5!important;}
+

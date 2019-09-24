@@ -1,0 +1,96 @@
+.main-menu li.nav1:nth-of-type(3)>ul {
+    display: block;
+}
+
+.main-menu li.nav1:nth-of-type(3)>a {
+    color: #1276e5;
+}
+
+
+
+.table-echarts{
+    height: 400px!important;
+}
+.table-echarts .echarts-box {
+    position: relative;
+    height: 335px;
+}
+
+.table-echarts .echarts-box #all_circle {
+    width: 30%;
+    float: left;
+    height: 290px;
+    position: relative;
+    z-index: 99;
+    padding-top: 20px;
+}
+.table-echarts .echarts-box #all_circle>div:nth-child(1){
+    height: 250px!important;
+}
+/* .table-echarts .echarts-box #all_line {
+    width: 70%;
+    height: 100%;
+    float: left;
+    position: relative;
+} */
+.table-echarts .echarts-box #all_line {
+    width: 100%;
+    height: 100%;
+    position: absolute!important;
+}
+.table-echarts .echarts-box .circle-loading{
+    width: 30%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.table-echarts .echarts-box .line-loading{
+    width: 70%;
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+}
+.table-echarts .echarts-box .loading{
+    height: 100%;
+    background: #fff;
+    text-align: center;
+    padding-top: 140px;
+    z-index: 666;
+}
+.isShow{
+    display: none;
+}
+#table-show thead .td-content.other:hover{
+    text-decoration: none!important;
+    cursor: text!important;
+}
+
+/* expand */
+#table-show .table-expand tbody td.number-col{
+    text-align: right;
+    padding-right: 10px;
+}
+#table-show .table-expand tbody td.number-col::after,#table-show .table-expand tbody td.number-col::before{content:".";line-height:0;height:0;display:block;visibility:hidden;clear:both;}
+#table-show .table-expand tbody td.number-col .expand{
+    width: 50%;
+    height: 18px;
+    float: left;
+    background: url("../img/sprites.png");
+    background-repeat: no-repeat;
+    background-position: 12px -180px;
+    cursor: pointer;
+}
+#table-show .table-expand tbody td.number-col .expand.opened{
+    background-position: 12px -200px;  
+}
+#table-show .table-expand tbody td.number-col .td-content{
+    width: 50%;
+    float: right;
+}
+.sub-line *{border-left:0!important;border-right:0!important;}
+.sub-line td{background: rgb(249, 249, 249);border-bottom: 1px solid #f0f0f0!important;border-top: 0!important;}
+.sub-line-last td{border-bottom: 1px solid #dedede!important;}
+.table-expand .sub-line:hover  td{ background: #e2e4f5!important;}
+#table-show .table-expand a,#table-show .table-expand a:hover{
+    color:#1276e5;
+}

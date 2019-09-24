@@ -1,0 +1,61 @@
+.main-menu li.nav1:nth-of-type(2)>ul {
+    display: block;
+}
+
+.main-menu li.nav1:nth-of-type(2)>a {
+    color: #1276e5;
+}
+
+
+
+.time-span {
+    margin-left: 25px;
+    border: 1px solid #e1e3e4;
+    border-radius: 2px;
+}
+
+.time-span a {
+    padding: 0 10px;
+    height: 24px;
+    line-height: 24px;
+    color: #323437;
+}
+
+.time-span a.first,
+.time-span a.selected:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.time-span a.selected {
+    position: relative;
+    bottom: -1px;
+    margin-top: -2px;
+    padding-top: 1px;
+    height: 25px;
+    background-color: #4fa8f9;
+    color: #fff;
+}
+.time-span a.disabled{
+    background-color: #f3f4f4;
+    color: #a0a2a5;
+    cursor: not-allowed;
+}
+
+.time-span a:not(.selected):hover {
+    background: #f2f3f4;
+}
+
+
+
+ .table-echarts #line {
+    height: 320px;
+    width: 100%;
+}
+
+#table-show .table thead .simple_date_title div.td-content:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
